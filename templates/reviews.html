@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Tales with Pangea</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/login_customer">Login as customer</a></li>
+                <li><a href="/login_technician">Login as technician</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h3><b>Customer Reviews</b></h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>Great service, very knowledgeable technician!</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>Had some issues with my internet connection, but the technician was able to fix it quickly and efficiently.</td>
+                </tr>
+                <tr>
+                    <td>Bob Johnson</td>
+                    <td>Very satisfied with the service provided, would definitely recommend to others.</td>
+                </tr>
+                {% for review in reviews %}
+                <tr>
+                    <td>{{ review['review'] }}</td>
+                    <td>{{ review['reviewer'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

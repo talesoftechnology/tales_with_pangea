@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">My Application</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/login_customer">Login as customer</a></li>
+                <li><a href="/login_technician">Login as technician</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h3><b>Welcome, {{ name }}</b></h3>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>Company Name:</td>
+                    <td>{{ cname }}</td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td>{{ status }}</td>
+                </tr>
+                <tr>
+                    <td>WAN IP Address:</td>
+                    <td>{{ ip }}</td>
+                </tr>
+                <tr>
+                    <td>Vendor:</td>:</td>
+                    <td>{{ vendor }}</td>
+                </tr>
+                <tr>
+                    <td>Customer Name:</td>:</td>
+                    <td>{{ customer_name }}</td>
+                </tr>
+                <tr>
+                    <td>Mail ID:</td>
+                    <td>{{ mail }}</td>
+                </tr>
+                <tr>
+                    <td>Phone Number:</td>
+                    <td> {{ number }}</td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td>{{ address }}</td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td>{{ city }}</td>
+                </tr>
+                <tr>
+                    <td>State:</td>
+                    <td>{{ state }}</td>
+                </tr>
+                <tr>
+                    <td>Command output:</td>
+                    <td>
+                        <pre>
+                        {{ output }}
+                        </pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Add review box here -->
+        <form method="POST" action="/save_review">
+            <div class="form-group">
+                <label for="review">Your Name:</label>
+                <input type="text" class="form-control" id="review" name="reviewer">
+            </div>
+            <div class="form-group">
+                <label for="reviewer">Add Review:</label>
+                <input type="text" class="form-control" id="reviewer" name="review">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+    
+</body>
+</html>

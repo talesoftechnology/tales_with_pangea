@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Tales with Pangea</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="/login_customer">Login as customer</a></li>
+                <li><a href="/login_technician">Login as technician</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    <div class="container">
+        <h1>Lets explore pangea</h1>
+        <h2>Please use below credentials</h2>
+        <h4>Name: '  Your name here'</h4>
+        <h4>IP address or Hostname:   192.66.66.3 </h4>
+        <h4>Username:   abraham </h4>
+        <h4>Password:   lincoln150 </h4>
+    </div>
+    {% endblock %}
+</body>
+</html>
