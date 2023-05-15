@@ -34,14 +34,6 @@
                     <td>John Doe</td>
                     <td>Great service, very knowledgeable technician!</td>
                 </tr>
-                <tr>
-                    <td>Jane Smith</td>
-                    <td>Had some issues with my internet connection, but the technician was able to fix it quickly and efficiently.</td>
-                </tr>
-                <tr>
-                    <td>Bob Johnson</td>
-                    <td>Very satisfied with the service provided, would definitely recommend to others.</td>
-                </tr>
                 {% for review in reviews %}
                 <tr>
                     <td>{{ review['review'] }}</td>
