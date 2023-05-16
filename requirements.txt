@@ -1,2 +1,3 @@
 Flask==2.2.3
 pangea-sdk==1.8.0
+gunicorn
