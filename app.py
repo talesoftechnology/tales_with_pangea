@@ -125,8 +125,8 @@ def reviews_page():
     
     return render_template('reviews.html', reviews=review_list)
 
-@app.route('/upload_configuration')
-def reviews_page():
+@app.route('/upload')
+def upload():
     return render_template('upload_page.html')
 
 
