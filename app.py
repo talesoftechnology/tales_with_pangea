@@ -127,12 +127,15 @@ def reviews_page():
 
 @app.route('/upload')
 def upload():
-    return render_template('upload_page.html')
+    if request.method == "POST":
+        return redirect(url_for("upload_check"))
+    else:
+        return render_template('upload_page.html')
 
 @app.route('/upload_check')
 def upload_check():
-    if request.method == "POST":
         return render_template('upload_check.html')
+    
 
 
 if __name__ == '__main__':
