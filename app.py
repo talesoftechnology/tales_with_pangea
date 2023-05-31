@@ -128,15 +128,17 @@ def reviews_page():
 @app.route('/upload', methods = ['POST', 'GET'])
 def upload():
     if request.method == "POST":
-        return redirect(url_for("upload_check"))
+        file = request.files["file"]
+        if file:
+            file_contents = file.read().decode("utf-8")
+            return render_template('upload_check.html', filecontent = file_contents)
+        #return redirect(url_for("upload_check"))
     if request.method == "GET":
         return render_template('upload_page.html')
 
 @app.route('/upload_check')
 def upload_check():
-        return render_template('upload_check.html')
-    
-
+        return render_template('upload_check.html', filecontent = 'DUMB')
 
 if __name__ == '__main__':
     app.run(debug=True)
