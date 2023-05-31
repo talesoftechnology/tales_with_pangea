@@ -132,7 +132,7 @@ def upload():
         if file:
             file_contents = file.read()
             return render_template('upload_check.html', filecontent = file_contents)
-        #return redirect(url_for("upload_check"))
+        return redirect(url_for("upload_check"))
     if request.method == "GET":
         return render_template('upload_page.html')
 
