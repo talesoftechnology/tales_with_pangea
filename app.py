@@ -125,11 +125,11 @@ def reviews_page():
     
     return render_template('reviews.html', reviews=review_list)
 
-@app.route('/upload')
+@app.route('/upload', methods = ['POST', 'GET'])
 def upload():
     if request.method == "POST":
         return redirect(url_for("upload_check"))
-    else:
+    if request.method == "GET":
         return render_template('upload_page.html')
 
 @app.route('/upload_check')
