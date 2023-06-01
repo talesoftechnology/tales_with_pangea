@@ -134,7 +134,9 @@ def upload():
             file = request.files['file']
             print(file)
             if file:
+                print("I am file")
                 file.save(f'uploads/uploaded_file')
+                print("I am saved")
                 intel = FileIntel(token="pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4")
                 response = intel.filepathReputation(filepath="./uploads/uploaded_file", provider = "reversinglabs")
                 print(response.result.data.verdict)
@@ -150,7 +152,7 @@ def upload():
 
 @app.route('/upload_check')
 def upload_check():
-        return render_template('upload_check.html', filecontent = "Hello")
+    return render_template('upload_check.html', filecontent = "Hello")
 
 if __name__ == '__main__':
     app.run(debug=True)
