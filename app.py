@@ -142,6 +142,7 @@ def upload():
                 response = intel.filepathReputation(filepath="./uploads/uploaded_file", provider = "reversinglabs")
                 print("verdict", response.result.data.verdict)
                 os.remove('./uploads/uploaded_file')
+                return response.result.data.verdict
 
         except:
             return """Check the uploaded file, \n
