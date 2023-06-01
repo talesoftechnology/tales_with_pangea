@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from pangea.services import Redact, FileIntel
 from details import info, config
+import os
 from datetime import timedelta
 
 app = Flask(__name__)
@@ -140,6 +141,7 @@ def upload():
                 intel = FileIntel(token="pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4")
                 response = intel.filepathReputation(filepath="./uploads/uploaded_file", provider = "reversinglabs")
                 print("verdict", response.result.data.verdict)
+                os.remove('./uploads/uploaded_file')
 
         except:
             return """Check the uploaded file, \n
