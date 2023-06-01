@@ -139,7 +139,7 @@ def upload():
                 print("I am saved")
                 intel = FileIntel(token="pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4")
                 response = intel.filepathReputation(filepath="./uploads/uploaded_file", provider = "reversinglabs")
-                print(response.result.data.verdict)
+                print("verdict", response.result.data.verdict)
 
         except:
             return """Check the uploaded file, \n
