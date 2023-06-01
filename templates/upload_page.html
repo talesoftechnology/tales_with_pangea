@@ -20,7 +20,7 @@
         <h4>Please login to the device and upload configuration file to push into the device</h4>
     </div>
     <div class="container">
-        <form method="post">
+        <form method="post" action="/upload" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -38,10 +38,12 @@
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <label for="file">Choose File to configure </label>
+                <label for="file">Choose File:</label>
                 <input type="file" class="form-control-file" id="file" name="file">
             </div>
-            <button type="submit" class="btn btn-primary">Push configuration</button>
+            <div>
+                <input type="submit" class="btn btn-primary" value="Push configuration">
+            </div>
         </form>
     </div>
 </body>

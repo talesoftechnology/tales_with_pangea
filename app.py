@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
-from pangea.services import Redact
+from pangea.services import Redact, FileIntel
 from details import info, config
 from datetime import timedelta
 
 app = Flask(__name__)
 app.secret_key = 'Psalms@126'
+app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 *1024
+app.config['ALLOWED_EXTENSIONS'] = ['.txt','.cfg']
 #app.permanent_session_lifetime = timedelta(minutes=5)
 
 @app.route('/')
@@ -128,17 +130,27 @@ def reviews_page():
 @app.route('/upload', methods = ['POST', 'GET'])
 def upload():
     if request.method == "POST":
-        file = request.files["file"]
-        if file:
-            file_contents = file.read().decode("utf-8")
-            return render_template('upload_check.html', filecontent = file_contents)
-        return redirect(url_for("upload_check"))
+        try:
+            file = request.files['file']
+            print(file)
+            if file:
+                file.save(f'uploads/uploaded_file')
+                intel = FileIntel(token="pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4")
+                response = intel.filepathReputation(filepath="./uploads/uploaded_file", provider = "reversinglabs")
+                print(response.result.data.verdict)
+
+        except:
+            return """Check the uploaded file, \n
+            File must be less than 8 MB\n
+            File must be a text file or configuration file\n
+            File extensions allowed : ('.txt', '.cfg')"""
+        
     if request.method == "GET":
         return render_template('upload_page.html')
 
 @app.route('/upload_check')
 def upload_check():
-        return render_template('upload_check.html', filecontent = 'DUMB')
+        return render_template('upload_check.html', filecontent = "Hello")
 
 if __name__ == '__main__':
     app.run(debug=True)
