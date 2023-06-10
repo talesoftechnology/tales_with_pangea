@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from pangea.services import Redact, FileIntel
+from pangea.config import PangeaConfig
+from pangea.services import Audit
 from details import info, config
 import os
 from datetime import timedelta
@@ -9,6 +11,9 @@ app.secret_key = 'Psalms@126'
 app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 *1024
 app.config['ALLOWED_EXTENSIONS'] = ['.txt','.cfg']
 #app.permanent_session_lifetime = timedelta(minutes=5)
+
+config1 = PangeaConfig(domain= "aws.us.pangea.cloud")
+audit = Audit("pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4", config = config1)
 
 @app.route('/')
 @app.route('/home')
@@ -33,6 +38,7 @@ def login_technician():
     if request.method == "POST":
         #session.permanent = True
         if request.form["ip"] == '192.66.66.3' and request.form["username"] == "abraham" and request.form["password"] == "lincoln150":
+            audit.log("Technician: " + request.form["name"] + " and ran the command" + request.form["command"])
             session["command"] = request.form["command"]
             session["name"] = request.form["name"]
             return redirect(url_for("results"))
