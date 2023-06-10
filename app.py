@@ -39,6 +39,7 @@ def login_technician():
         #session.permanent = True
         if request.form["ip"] == '192.66.66.3' and request.form["username"] == "abraham" and request.form["password"] == "lincoln150":
             audit.log("Technician: " + request.form["name"] + " and ran the command" + request.form["command"])
+            print(os.getenv("TEST"))
             session["command"] = request.form["command"]
             session["name"] = request.form["name"]
             return redirect(url_for("results"))
