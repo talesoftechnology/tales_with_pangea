@@ -157,5 +157,9 @@ def upload():
 def upload_check():
     return render_template('upload_check.html', filecontent = "Hello")
 
+@app.route('/admin', methods = ['POST', 'GET'])
+def admin():
+    return render_template('admin_page.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
