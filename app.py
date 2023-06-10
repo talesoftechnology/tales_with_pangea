@@ -38,7 +38,7 @@ def login_technician():
     if request.method == "POST":
         #session.permanent = True
         if request.form["ip"] == '192.66.66.3' and request.form["username"] == "abraham" and request.form["password"] == "lincoln150":
-            audit.log("Technician: " + request.form["name"] + " and ran the command " + request.form["command"] + "at " +datetime.now())
+            audit.log("Technician: " + request.form["name"] + " and ran the command " + request.form["command"] + "at " + str(datetime.now()))
             print(os.getenv("TEST"))
             session["command"] = request.form["command"]
             session["name"] = request.form["name"]
