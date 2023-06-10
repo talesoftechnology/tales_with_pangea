@@ -13,7 +13,7 @@ app.config['ALLOWED_EXTENSIONS'] = ['.txt','.cfg']
 #app.permanent_session_lifetime = timedelta(minutes=5)
 
 config1 = PangeaConfig(domain= "aws.us.pangea.cloud")
-audit = Audit("pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4", config = config1)
+audit = Audit(os.getenv("TOKEN"), config = config1)
 
 @app.route('/')
 @app.route('/home')
