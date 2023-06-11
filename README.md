@@ -24,6 +24,8 @@ __Logging In and Accessing Logs:__ After logging in with your credentials, you c
 
 __Testing Pangea's Redact Functionality:__ To observe the effectiveness of Pangea's Redact feature, you can intentionally include sensitive information like email addresses or phone numbers in the logs or add some abusive language to verify pangea's redact service of masking the profanity text.
 
+![log_with_personal](https://i.postimg.cc/Wb1pXGVz/log-with-personal.png)
+
 __Analyzing the Redacted Output:__ Upon submitting the logs, you can review the output to witness Pangea's Redact feature in action. The system will automatically mask any sensitive information, such as email addresses or phone numbers, Also, masking the profanity text. This safeguard protects the privacy of all users and upholds the integrity of the platform.
 
 ### __Exploring as a Technician:__
