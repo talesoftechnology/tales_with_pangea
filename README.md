@@ -18,7 +18,7 @@ __Observing the Output:__ To experience the precise distinctions, choose `interf
 
 __Pangea Redact:__ As you explore the configuration, you will observe the powerful functionality of Pangea Redact. This feature expertly masks sensitive IP addresses, ensuring that confidential information remains hidden from view. While customers can access and review their configurations, the protection provided by Pangea Redact ensures that sensitive IP addresses are redacted, maintaining privacy and security.
 
-![Interface_Info_customer](https://i.postimg.cc/5YDZ7ZCk/interfaces-info-csr.png)
+![Interface_Info_customer](https://i.postimg.cc/90fCM2FV/interfaces-info-csr.png)
 
 __Logging In and Accessing Logs:__ After logging in with your credentials, you can scroll down to access the log section. Here, you have the option to add logs as a customer. Feel free to enter any relevant information, such as troubleshooting details or specific requests.
 
@@ -26,7 +26,11 @@ __Testing Pangea's Redact Functionality:__ To observe the effectiveness of Pange
 
 ![log_with_personal](https://i.postimg.cc/Wb1pXGVz/log-with-personal.png)
 
+![log_with_abuse](https://i.postimg.cc/zXrTdXX3/log-with-abuse.png)
+
 __Analyzing the Redacted Output:__ Upon submitting the logs, you can review the output to witness Pangea's Redact feature in action. The system will automatically mask any sensitive information, such as email addresses or phone numbers, Also, masking the profanity text. This safeguard protects the privacy of all users and upholds the integrity of the platform.
+
+![resultant_logs](https://i.postimg.cc/MT4JWFHr/resultant-logs.png)
 
 ### __Exploring as a Technician:__
 
@@ -34,7 +38,11 @@ __Logging in with Technician Credentials:__ As a technician, you can access the 
 
 __Customer Information Masked:__ Once logged in, you will notice that customer information is hidden from view. Pangea ensures that sensitive customer details, such as names, IP addresses, and other personal information, are masked, providing enhanced privacy and security.
 
+![customer_info_tech](https://i.postimg.cc/Pxzddk0f/customer-info-tech.png)
+
 __Accessing Configurations:__ As a technician, you will have access to view and work with network configurations assigned to you. By selecting the relevant network device and configuration, you can analyze and troubleshoot any issues efficiently. The platform enables you to retrieve the necessary information without revealing sensitive customer data, thanks to Pangea redact's robust security measures.
+
+![interfaces_info_tech](https://i.postimg.cc/MTbfNNDV/interfaces-info-tech.png)
 
 ### __Exploring the Push Configuration Tab:__
 
@@ -42,7 +50,11 @@ __Pangea File Intel:__ Technicians can push configs if they want to update somet
 
 __Login with Default Credentials:__ To begin exploring the Push Configuration tab, log in using the default credentials provided. Add your name in the name text box and Upload a Malicious File and Push Configuration
 
+![push_tab](https://i.postimg.cc/Fz48sd3w/push-tab.png)
+
 __Observe Malicious Content Warning:__ Upon attempting to push the configuration with a malicious file, you will encounter a warning message indicating the presence of potentially harmful content. The platform's robust security system swiftly detects and alerts users about the potential risks associated with the uploaded file. Powered by Pangea's File Intel service.
+
+![push_result](https://i.postimg.cc/fRpHRSh5/push-result.png)
 
 In a standard scenario, when uploading a valid configuration file, the platform enables you to push the configuration seamlessly. 
 
@@ -57,5 +69,7 @@ If a technician is assigned a task to change some configs in the network, they c
 No one to blame if something goes wrong.
 
 You can try logging in activity logs of your website to pangea dashboard.
+
+![activity_logs](https://i.postimg.cc/C59Zq0Ly/activity-logs.png)
 
 To have a glimpse of pangea's secure audit log dashboard, just click on Administration tab and check out.
