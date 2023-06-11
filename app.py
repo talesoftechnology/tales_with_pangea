@@ -141,14 +141,17 @@ def upload():
             file = request.files['file']
             print(file)
             if file:
-                print("I am file")
                 file.save(f'uploads/uploaded_file')
-                print("I am saved")
                 intel = FileIntel(token="pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4")
                 response = intel.filepathReputation(filepath="./uploads/uploaded_file", provider = "reversinglabs")
                 print("verdict", response.result.data)
                 os.remove('./uploads/uploaded_file')
-                return response.result.data.verdict
+                if response.result.data.verdict == 'malicious':
+                    return render_template('after_upload.html', message = '''Our security systems have detected a potentially malicious file during the upload process. 
+                    Please refrain from uploading such files for the safety of our platform and users''', name = request.form['name'])
+                else:
+                    return render_template('after_upload.html', message = '''configuration pushed successfully to the device
+                    ''', name = request.form['name'])
 
         except:
             return """Check the uploaded file, \n
