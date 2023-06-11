@@ -14,7 +14,7 @@ __Login with Predefined Credentials:__ On the login page, you can quickly get st
 
 __Observing the Output:__ To experience the precise distinctions, choose `interfaces_info` from the dropdown menu. Upon logging in, you will have access to the output specific to your selected command. As a customer, you will notice that all customer-related information is visible, providing a comprehensive view of your account and interactions.
 
-![Customer_Info_customer](/img/customer_info_csr.png)
+![Customer_Info_customer](https://i.postimg.cc/NFR19G2Z/customer-info-csr.png)
 
 __Pangea Redact:__ As you explore the configuration, you will observe the powerful functionality of Pangea Redact. This feature expertly masks sensitive IP addresses, ensuring that confidential information remains hidden from view. While customers can access and review their configurations, the protection provided by Pangea Redact ensures that sensitive IP addresses are redacted, maintaining privacy and security.
 
