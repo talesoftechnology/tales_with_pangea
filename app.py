@@ -7,13 +7,13 @@ import os
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET_KEY")
+app.secret_key = "Psalms@126"
 app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 *1024
 app.config['ALLOWED_EXTENSIONS'] = ['.txt','.cfg']
 #app.permanent_session_lifetime = timedelta(minutes=5)
 
-config1 = PangeaConfig(domain=os.getenv("DOMAIN"))
-audit = Audit(os.getenv("TOKEN"), config = config1)
+config1 = PangeaConfig(domain="aws.us.pangea.cloud")
+audit = Audit("pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4", config = config1)
 
 @app.route('/')
 @app.route('/home')
@@ -39,7 +39,6 @@ def login_technician():
         #session.permanent = True
         if request.form["ip"] == '192.66.66.3' and request.form["username"] == "abraham" and request.form["password"] == "lincoln150":
             audit.log("Technician: " + request.form["name"] + " and ran the command " + request.form["command"] + "at " + str(datetime.now()))
-            print(os.getenv("TEST"))
             session["command"] = request.form["command"]
             session["name"] = request.form["name"]
             return redirect(url_for("results"))
@@ -63,7 +62,7 @@ def logout():
 
 @app.route("/results", methods = ["POST", "GET"])
 def results():
-    redact = Redact(token = os.getenv("TOKEN"))
+    redact = Redact(token = "pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4")
     check_res = redact.redact_structured(info)
     info_redacted = check_res.raw_result["redacted_data"]
     return render_template("results.html", cname = info_redacted ["Company Name"],
@@ -80,7 +79,7 @@ def results():
     
 @app.route("/results_c", methods = ["POST", "GET"])
 def results_c():
-        redact = Redact(token = os.getenv("TOKEN")) 
+        redact = Redact(token = "pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4") 
         check_res = redact.redact_structured(config)
         config_redacted = check_res.raw_result["redacted_data"]
         if request.method == 'GET':
@@ -101,7 +100,7 @@ def results_c():
 
 @app.route('/save_review', methods=['POST'])
 def review_submitted():
-    redact = Redact(token=os.getenv("TOKEN"))
+    redact = Redact(token="pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4")
     check_res = redact.redact(text = request.form['review'])
     review = check_res.raw_result['redacted_text']
     reviewer = request.form['reviewer']
@@ -145,7 +144,7 @@ def upload():
                 print("I am file")
                 file.save(f'uploads/uploaded_file')
                 print("I am saved")
-                intel = FileIntel(token=os.getenv("TOKEN"))
+                intel = FileIntel(token="pts_6cbbz3ikyknt4ei7zkbp7nrq26hrg7x4")
                 response = intel.filepathReputation(filepath="./uploads/uploaded_file", provider = "reversinglabs")
                 print("verdict", response.result.data.verdict)
                 os.remove('./uploads/uploaded_file')
@@ -167,6 +166,10 @@ def upload_check():
 @app.route('/admin', methods = ['POST', 'GET'])
 def admin():
     return render_template('admin_page.html')
+
+@app.route('/documentation' , methods = ['GET'])
+def documentation():
+    return render_template('documentation.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
