@@ -18,6 +18,8 @@ __Observing the Output:__ To experience the precise distinctions, choose `interf
 
 __Pangea Redact:__ As you explore the configuration, you will observe the powerful functionality of Pangea Redact. This feature expertly masks sensitive IP addresses, ensuring that confidential information remains hidden from view. While customers can access and review their configurations, the protection provided by Pangea Redact ensures that sensitive IP addresses are redacted, maintaining privacy and security.
 
+![Interface_Info_customer](https://i.postimg.cc/5YDZ7ZCk/interfaces-info-csr.png)
+
 __Logging In and Accessing Logs:__ After logging in with your credentials, you can scroll down to access the log section. Here, you have the option to add logs as a customer. Feel free to enter any relevant information, such as troubleshooting details or specific requests.
 
 __Testing Pangea's Redact Functionality:__ To observe the effectiveness of Pangea's Redact feature, you can intentionally include sensitive information like email addresses or phone numbers in the logs or add some abusive language to verify pangea's redact service of masking the profanity text.
