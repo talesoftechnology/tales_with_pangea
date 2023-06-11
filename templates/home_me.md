@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <style>
-        .navbar-default {
-            background-color: #3D0F58;
-        }
-        .navbar-default .navbar-nav>li>a {
-            color: white;
-        }
-        body {
-            background-color: hwb(210 89% 8%);
-        }
-        .navbar-default .navbar-nav>li>a:hover {
-            color: grey;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <img src="https://i.ibb.co/18TKB0y/tot3.png" alt="Tales with pangea" height = 48>
-            </div>
-            <ul class="nav navbar-nav" ms-auto>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="/login_customer">Login as customer</a></li>
-                <li><a href="/login_technician">Login as technician</a></li>
-                <li><a href="/upload">Upload</a></li>
-                <li><a href="/admin">Administrator</a></li>
-                <li><a href="/documentation">Docs</a></li>
-            </ul>
-        </div>
-    </nav>
-    {% block content %}
-    <div class="container">
-        <h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="__TALES_WITH_PANGEA____0"></a><strong>TALES WITH PANGEA :)</strong></h1>
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="__TALES_WITH_PANGEA____0"></a><strong>TALES WITH PANGEA :)</strong></h1>
 <p class="has-line-data" data-line-start="2" data-line-end="3">Welcome to our innovative networking platform!</p>
 <p class="has-line-data" data-line-start="4" data-line-end="5">Our website is designed to bridge the gap between network technicians and customers, whether you’re a customer or technician, providing a seamless and tailored experience for both parties without compromising on platform security and reliability.</p>
 <p class="has-line-data" data-line-start="6" data-line-end="7">We aim to simplify network management and troubleshooting with user-friendly features and powerful tools.</p>
@@ -55,7 +17,8 @@
 <p class="has-line-data" data-line-start="30" data-line-end="31">our twitter profile - <a href="https://twitter.com/toftechnology">toftechnology</a></p>
 <p class="has-line-data" data-line-start="32" data-line-end="33">Follow us on <a href="https://talesoftechnology.github.io">tales of technology</a></p>
 <p class="has-line-data" data-line-start="34" data-line-end="35">© 2023 Tales of Technology. All rights reserved. Developed by Verlaine and Herald</p>
-    </div>
-    {% endblock %}
-</body>
-</html>
+
+
+
+
+
