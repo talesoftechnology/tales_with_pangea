@@ -147,10 +147,10 @@ def upload():
                 print("verdict", response.result.data)
                 os.remove('./uploads/uploaded_file')
                 if response.result.data.verdict == 'malicious':
-                    return render_template('after_upload.html', message = '''Our security systems have detected a potentially malicious file during the upload process. 
+                    return render_template('after_upload.html', message = '''Our security systems have detected a potentially malicious file during the upload process.\n 
                     Please refrain from uploading such files for the safety of our platform and users''', name = request.form['name'])
                 else:
-                    return render_template('after_upload.html', message = '''configuration pushed successfully to the device
+                    return render_template('after_upload.html', message = '''Configuration pushed successfully to the device
                     ''', name = request.form['name'])
 
         except:
