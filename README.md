@@ -73,3 +73,19 @@ You can try logging in activity logs of your website to pangea dashboard.
 ![activity_logs](https://i.postimg.cc/C59Zq0Ly/activity-logs.png)
 
 To have a glimpse of pangea's secure audit log dashboard, just click on Administration tab and check out.
+
+Thank you for reading about our platform
+
+Explore pangea documentation [here](https://pangea.cloud/docs/)
+
+Embark on a Journey of Network Empowerment: Dive into the Depths of our Tales with Pangea networking platform now!
+
+Our Linkedin profiles to follow 
+[Herald's linkedin](https://linkedin.com/in/herald126/)
+[Verlaine's linkedin](https://www.linkedin.com/in/verlaine-j-muhungu-363507b2/)
+
+
+Follow us on [tales of technology](https://talesoftechnology.github.io) 
+our twitter profile - [toftechnology](https://twitter.com/toftechnology)
+
+Developed by Verlaine and Herald. © 2023 Tales of Technology. All rights reserved.
