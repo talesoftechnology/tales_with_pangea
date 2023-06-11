@@ -25,6 +25,7 @@ def login_customer():
     if request.method == "POST":
         #session.permanent = True
         if request.form["ip"] == '192.66.66.3' and request.form["username"] == "Abraham" and request.form["password"] == "lincoln150":
+            audit.log("Customer: " + str(request.form['name']) + "logged into " + str(request.form["ip"]) + "and ran command " + str(request.form["command"]))
             session["command"] = request.form["command"]
             session["name"] = request.form["name"]
             return redirect(url_for("results_c"))
@@ -38,7 +39,7 @@ def login_technician():
     if request.method == "POST":
         #session.permanent = True
         if request.form["ip"] == '192.66.66.3' and request.form["username"] == "Abraham" and request.form["password"] == "lincoln150":
-            audit.log("Technician: " + request.form["name"] + " and ran the command " + request.form["command"] + "at " + str(datetime.now()))
+            audit.log("Technician: " + str(request.form['name']) + "logged into " + str(request.form["ip"]) + "and ran command " + str(request.form["command"]))
             session["command"] = request.form["command"]
             session["name"] = request.form["name"]
             return redirect(url_for("results"))
@@ -146,6 +147,7 @@ def upload():
                 response = intel.filepathReputation(filepath="./uploads/uploaded_file", provider = "reversinglabs")
                 print("verdict", response.result.data)
                 os.remove('./uploads/uploaded_file')
+                audit.log("File uploaded by " + str(request.form['name']))
                 if response.result.data.verdict == 'malicious':
                     return render_template('after_upload.html', message = '''Our security systems have detected a potentially malicious file during the upload process.\n 
                     Please refrain from uploading such files for the safety of our platform and users''', name = request.form['name'])
