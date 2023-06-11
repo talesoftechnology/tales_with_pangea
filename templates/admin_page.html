@@ -1,1 +1,63 @@
-<h3>This is admin page</h3>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .navbar-default {
+            background-color: #3D0F58;
+        }
+        .navbar-default .navbar-nav>li>a {
+            color: white;
+        }
+        body {
+            background-color: hwb(210 89% 8%);
+        }
+        .navbar-default .navbar-nav>li>a:hover {
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src="https://i.ibb.co/18TKB0y/tot3.png" alt="Tales with pangea" height = 48>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/login_customer">Login as customer</a></li>
+                <li><a href="/login_technician">Login as technician</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h3><b>Activity logs</b></h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Time stamp</th>
+                    <th>message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11/06/2023, 04:03 pm</td>
+                    <td>Technician: Herald logged in and ran the command uptime</td>
+                </tr>
+                <tr>
+                    <td>01/06/2023, 05:07 pm</td>
+                    <td>Abraham lincoln logged in and pushed configuration to device 192.12.3.7 </td>
+                </tr>
+                <tr>
+                    <td>02/06/2022, 00:12 pm</td>
+                    <td> Admin logged in </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
